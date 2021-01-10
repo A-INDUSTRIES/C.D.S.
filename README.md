@@ -1,2 +1,2 @@
-# C.D.S.
+# CDS
 CustomDiscordStatus
