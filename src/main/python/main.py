@@ -34,6 +34,11 @@ class MainWindow(QtWidgets.QWidget):
     def setup_connetions(self):
         pass
 
+    def rpc_start(self):
+        self.presence = rpc.Presence("797892938201432125")
+        self.presence.connect()
+        self.presence.update()
+
 if __name__ == '__main__':
     appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
     window = MainWindow()
