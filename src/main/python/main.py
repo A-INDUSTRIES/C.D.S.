@@ -6,7 +6,6 @@ import sys, pypresence as rpc
 class MainWindow(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.set
         self.setup_ui()
 
     def setup_ui(self):
@@ -31,10 +30,11 @@ class MainWindow(QtWidgets.QWidget):
 
     def create_layouts(self):
         self.main_layout = QtWidgets.QGridLayout(self)
+        self.main_layout.setContentsMargins(0, 0, 0, 0)
 
     def add_widgets_to_layout(self):
         self.main_layout.addWidget(self.img, 1,1,10,10)
-        self.main_layout.addWidget(self.cb_icon_choice, 1,1,1,1)
+        self.main_layout.addWidget(self.cb_icon_choice, 4,3,1,1)
         self.main_layout.addWidget(self.btn_set, 10,1,1,1)
         self.main_layout.addWidget(self.btn_clear, 10,2,1,1)
 
