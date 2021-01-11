@@ -6,6 +6,7 @@ import sys, pypresence as rpc
 class MainWindow(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+        self.set
         self.setup_ui()
 
     def setup_ui(self):
@@ -22,17 +23,20 @@ class MainWindow(QtWidgets.QWidget):
         self.cb_icon_choice = QtWidgets.QComboBox()
         self.le_details = QtWidgets.QLineEdit("Top Line")
         self.le_status = QtWidgets.QLineEdit("Bottom Line")
+        self.img = QtWidgets.QLabel()
 
     def modify_widgets(self):
         self.cb_icon_choice.addItems(["VisualStudioCode", "Youtube", "Technical Stuff"])
+        self.img.setPixmap(QtGui.QPixmap(appctxt.get_resource("RPC.png")))
 
     def create_layouts(self):
         self.main_layout = QtWidgets.QGridLayout(self)
 
     def add_widgets_to_layout(self):
-        self.main_layout.addWidget(self.cb_choice, 1,1,1,1)
-        self.main_layout.addWidget(self.btn_set, 1,2,1,1)
-        self.main_layout.addWidget(self.btn_clear, 2,1,1,2)
+        self.main_layout.addWidget(self.img, 1,1,10,10)
+        self.main_layout.addWidget(self.cb_icon_choice, 1,1,1,1)
+        self.main_layout.addWidget(self.btn_set, 10,1,1,1)
+        self.main_layout.addWidget(self.btn_clear, 10,2,1,1)
 
     def setup_connetions(self):
         self.btn_set.clicked.connect(self.rpc_set)
