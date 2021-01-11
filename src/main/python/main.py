@@ -37,7 +37,7 @@ class MainWindow(QtWidgets.QWidget):
     def rpc_start(self):
         self.presence = rpc.Presence("797892938201432125")
         self.presence.connect()
-        self.presence.update()
+        self.presence.update(details="Setting up custom status...")
 
 if __name__ == '__main__':
     appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
