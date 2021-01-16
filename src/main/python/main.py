@@ -27,16 +27,17 @@ class MainWindow(QtWidgets.QWidget):
     def modify_widgets(self):
         self.cb_icon_choice.addItems(["VisualStudioCode", "Youtube", "Technical Stuff"])
         self.img.setPixmap(QtGui.QPixmap(appctxt.get_resource("RPC.png")))
+        self.setStyleSheet("QPushButton: {border-radius: 10px;}")
 
     def create_layouts(self):
         self.main_layout = QtWidgets.QGridLayout(self)
         self.main_layout.setContentsMargins(0, 0, 0, 0)
 
     def add_widgets_to_layout(self):
-        self.main_layout.addWidget(self.img, 1,1,10,10)
-        self.main_layout.addWidget(self.cb_icon_choice, 4,3,1,1)
-        self.main_layout.addWidget(self.btn_set, 10,1,1,1)
-        self.main_layout.addWidget(self.btn_clear, 10,2,1,1)
+        self.main_layout.addWidget(self.img, 1,1,20,20)
+        self.main_layout.addWidget(self.cb_icon_choice, 8,1,1,1)
+        self.main_layout.addWidget(self.btn_set, 19,2,1,1)
+        self.main_layout.addWidget(self.btn_clear, 19,3,1,1)
 
     def setup_connetions(self):
         self.btn_set.clicked.connect(self.rpc_set)
