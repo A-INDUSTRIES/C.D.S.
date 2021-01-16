@@ -28,6 +28,23 @@ class MainWindow(QtWidgets.QWidget):
         self.cb_icon_choice.addItems(["VisualStudioCode", "Youtube", "Technical Stuff"])
         self.img.setPixmap(QtGui.QPixmap(appctxt.get_resource("RPC.png")))
         self.setStyleSheet("QPushButton: {border-radius: 10px;}")
+        self.setStyleSheet("""QPushButton {background-color: rgba(44,47,51,0);
+border-radius: 4px;
+border-width: 0.5px;
+border-color: rgba(255,255,255,75);
+border-style: outset;
+color: white;
+padding: 6px;}
+
+QPushButton::hover {background-color: rgb(153,170,181);
+border-radius: 4px;
+border-width: 0.5px;
+border-color: rgba(255,255,255,75);
+border-style: outset;
+color: white;
+padding: 6px;}
+
+QComboBox: {background: rgba(1,1,1,0);}""")
 
     def create_layouts(self):
         self.main_layout = QtWidgets.QGridLayout(self)
